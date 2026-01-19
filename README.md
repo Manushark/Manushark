@@ -1,4 +1,4 @@
-# 🐻 Hi, I'm Manuel Rivas — Software Developer
+# Hi, I'm Manuel Rivas — Software Developer
 
 ✨ Passionate about crafting clean code, building scalable architectures, and creating real-world solutions.
 
