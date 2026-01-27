@@ -1,4 +1,4 @@
-# Hi, I'm Manuel Rivas — Software Developer [Open to work]
+# Hi, I'm Manuel Rivas — Software Developer [Open to work]✅
 
 ✨ Passionate about crafting clean code, building scalable architectures, and creating real-world solutions.
 
