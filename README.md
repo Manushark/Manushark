@@ -1,18 +1,17 @@
 <div align="center">
 
-<!-- Animated Header Banner -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Manuel%20Rivas&fontSize=60&fontColor=fff&animation=twinkling&fontAlignY=35&desc=Software%20Developer%20%7C%20Open%20to%20Work%20✅&descAlignY=58&descSize=18" width="100%"/>
-
-<!-- Typing Animation -->
-<a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=A960EE&center=true&vCenter=true&random=false&width=600&lines=Clean+Code+%7C+Scalable+Architecture;Passionate+Software+Developer;Daily+Commits+%7C+Daily+Growth;Open+to+Collaborate+%26+Innovate" alt="Typing SVG" />
-</a>
+<!-- Banner SVG — upload banner.svg to the root of this repo -->
+<img src="./banner.svg" width="100%" alt="Manuel Rivas — Software Developer"/>
 
 <br/>
 
-<!-- Social Badges -->
+<!-- Typing Animation -->
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=A960EE&center=true&vCenter=true&width=600&lines=Passionate+about+clean+code;Building+scalable+architectures;Pushing+commits+daily+%F0%9F%8C%B1;Open+to+collaborate+%26+innovate+%F0%9F%A4%9D)](https://git.io/typing-svg)
+
+<br/>
+
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Manushark)
+[![GitHub](https://img.shields.io/badge/GitHub-@Manushark-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Manushark)
 [![Profile Views](https://komarev.com/ghpvc/?username=Manushark&color=A960EE&style=for-the-badge&label=PROFILE+VIEWS)](https://github.com/Manushark)
 
 </div>
@@ -22,16 +21,15 @@
 ## 🚀 About Me
 
 ```yaml
-name: Manuel Rivas
-role: Software Developer
-status: Open to Work ✅
-location: Remote / Worldwide
+name:     Manuel Rivas
+role:     Software Developer
+status:   Open to Work ✅
 
 passions:
-  - ✨ Crafting clean, maintainable code
+  - ✨  Crafting clean, maintainable code
   - 🏗️  Building scalable architectures
   - 🌍  Creating real-world solutions
-  - 📈  Pushing commits daily as part of personal growth
+  - 📈  Pushing commits daily — personal growth routine
 
 values:
   - 🤝  Collaboration & Innovation
@@ -57,7 +55,7 @@ values:
 ![Azure](https://img.shields.io/badge/Microsoft%20Azure-0072C6?style=for-the-badge&logo=microsoftazure&logoColor=white)
 
 ### 🗄️ Databases
-![Microsoft SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)
+![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-4ea94b?style=for-the-badge&logo=mongodb&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 
@@ -86,32 +84,6 @@ values:
 
 ---
 
-## 🏆 GitHub Trophies
-
-<div align="center">
-
-![GitHub Trophies](https://github-profile-trophy.vercel.app/?username=Manushark&theme=radical&no-frame=true&no-bg=true&margin-w=6&column=7)
-
-</div>
-
----
-
-## 🐍 Contribution Snake
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Manushark/Manushark/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Manushark/Manushark/output/github-snake.svg" />
-  <img alt="GitHub contribution snake animation" src="https://raw.githubusercontent.com/Manushark/Manushark/output/github-snake.svg" />
-</picture>
-
-> ⚠️ *To enable the snake animation, follow the [setup guide](#snake-animation-setup) below.*
-
-</div>
-
----
-
 ## 💡 Dev Quote of the Day
 
 <div align="center">
@@ -128,50 +100,11 @@ values:
 
 > *"Great software is built by great teams — let's build something amazing together."*
 
+<br/>
+
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your@email.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com)
-[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=About.me&logoColor=white)](https://yourportfolio.com)
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer" width="100%"/>
 
 </div>
 
----
-
-<details>
-<summary>🐍 Snake Animation Setup</summary>
-<br/>
-
-To enable the GitHub contribution snake, add this GitHub Action to your profile repo at `.github/workflows/snake.yml`:
-
-```yaml
-name: Generate Snake Animation
-
-on:
-  schedule:
-    - cron: "0 */12 * * *"
-  workflow_dispatch:
-
-jobs:
-  generate:
-    permissions:
-      contents: write
-    runs-on: ubuntu-latest
-    steps:
-      - uses: Platane/snk/svg-only@v3
-        with:
-          github_user_name: Manushark
-          outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
-      - uses: crazy-max/ghaction-github-pages@v3.1.0
-        with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-```
-
-</details>
-
-<!-- Proudly crafted with passion and caffeine ☕ -->
+<!-- Proudly crafted with passion ☕ -->
