@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 50" width="860" height="50">
+  <rect width="860" height="50" rx="10" fill="#0d1117" stroke="#21262d" stroke-width="0.8"/>
+  <text font-family="'Segoe UI', system-ui, sans-serif" font-size="13" fill="#8b949e">
+    <tspan x="60"  y="31">📍 Remote / Worldwide</tspan>
+    <tspan x="270" y="31" fill="#30363d">·</tspan>
+    <tspan x="290" y="31">💬 Spanish &amp; English</tspan>
+    <tspan x="470" y="31" fill="#30363d">·</tspan>
+    <tspan x="490" y="31">☕ Fueled by coffee</tspan>
+    <tspan x="650" y="31" fill="#30363d">·</tspan>
+    <tspan x="670" y="31">🎯 Quality over quantity</tspan>
+  </text>
+</svg>
