@@ -10,7 +10,7 @@
 
 <br/>
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](http://www.linkedin.com/in/manuelrivastavarez)
 [![GitHub](https://img.shields.io/badge/GitHub-@Manushark-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Manushark)
 [![Profile Views](https://komarev.com/ghpvc/?username=Manushark&color=A960EE&style=for-the-badge&label=PROFILE+VIEWS)](https://github.com/Manushark)
 
@@ -73,12 +73,9 @@ values:
 
 <div align="center">
 
-<img width="49%" src="https://github-readme-stats.vercel.app/api?username=Manushark&theme=midnight-purple&hide_border=true&include_all_commits=true&count_private=true&show_icons=true&rank_icon=github" />
-<img width="49%" src="https://nirzak-streak-stats.vercel.app/?user=Manushark&theme=midnight-purple&hide_border=true" />
-
-<br/><br/>
-
-<img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Manushark&theme=midnight-purple&hide_border=true&include_all_commits=true&count_private=true&layout=compact" />
+<img width="47.7%" src="https://github-readme-stats.vercel.app/api?username=Manushark&theme=midnight-purple&hide_border=true&include_all_commits=true&count_private=true&show_icons=true&rank_icon=github" />
+<img width="50%" src="https://nirzak-streak-stats.vercel.app/?user=Manushark&theme=midnight-purple&hide_border=true" />
+<img width="32%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Manushark&theme=midnight-purple&hide_border=true&include_all_commits=true&count_private=true&layout=compact" />
 
 </div>
 
@@ -102,8 +99,8 @@ values:
 
 <br/>
 
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your@email.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](manuelrivas.1023@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](http://www.linkedin.com/in/manuelrivastavarez)
 
 </div>
 
