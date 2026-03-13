@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 110" width="420" height="110">
+  <defs>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161b22"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </linearGradient>
+  </defs>
+  <rect width="420" height="110" rx="12" fill="url(#cardBg)" stroke="#21262d" stroke-width="0.8"/>
+  <rect x="0" y="0" width="3" height="110" rx="2" fill="#34d399" opacity="0.8"/>
+  <circle cx="46" cy="55" r="22" fill="#34d399" opacity="0.1"/>
+  <!-- Pulsing dot -->
+  <circle cx="46" cy="55" r="6" fill="#34d399" opacity="0.9">
+    <animate attributeName="r" values="6;9;6" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="82" y="46" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="600" fill="#e6edf3">Open to Work ✅</text>
+  <text x="82" y="65" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" fill="#8b949e">Currently looking for new opportunities.</text>
+  <text x="82" y="82" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" fill="#8b949e">Let's build something amazing together.</text>
+</svg>
