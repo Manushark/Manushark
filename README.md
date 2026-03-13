@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- Banner SVG — upload banner.svg to the root of this repo -->
-<img src="./banner.svg" width="500%" alt="Manuel Rivas — Software Developer"/>
+<img src="./banner2.svg" width="500%" alt="Manuel Rivas — Software Developer"/>
 
 <br/>
 
@@ -99,8 +99,8 @@ values:
 
 <br/>
 
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](manuelrivas.1023@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](http://www.linkedin.com/in/manuelrivastavarez)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:manuelrivas.1023@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/manuelrivastavarez)
 
 </div>
 
