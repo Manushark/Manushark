@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" width="900" height="280">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#1a0533"/>
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A960EE" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#A960EE" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#FF333D" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A960EE"/>
+      <stop offset="50%" stop-color="#ff6fd8"/>
+      <stop offset="100%" stop-color="#FF333D"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softglow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="280" fill="url(#bg)"/>
+
+  <!-- Grid lines -->
+  <g stroke="#A960EE" stroke-opacity="0.07" stroke-width="1">
+    <line x1="0" y1="56" x2="900" y2="56"/>
+    <line x1="0" y1="112" x2="900" y2="112"/>
+    <line x1="0" y1="168" x2="900" y2="168"/>
+    <line x1="0" y1="224" x2="900" y2="224"/>
+    <line x1="180" y1="0" x2="180" y2="280"/>
+    <line x1="360" y1="0" x2="360" y2="280"/>
+    <line x1="540" y1="0" x2="540" y2="280"/>
+    <line x1="720" y1="0" x2="720" y2="280"/>
+  </g>
+
+  <!-- Animated scanline -->
+  <rect x="0" y="0" width="900" height="2" fill="url(#lineGrad)" opacity="0.8">
+    <animateTransform attributeName="transform" type="translate" from="0,0" to="0,280" dur="3s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Corner brackets -->
+  <g stroke="#A960EE" stroke-width="2.5" fill="none" filter="url(#glow)">
+    <polyline points="20,50 20,18 52,18"/>
+    <polyline points="848,18 880,18 880,50"/>
+    <polyline points="20,230 20,262 52,262"/>
+    <polyline points="848,262 880,262 880,230"/>
+  </g>
+
+  <!-- Ambient orbs -->
+  <circle cx="140" cy="140" r="90" fill="#A960EE" opacity="0.06" filter="url(#softglow)"/>
+  <circle cx="760" cy="140" r="90" fill="#FF333D" opacity="0.05" filter="url(#softglow)"/>
+
+  <!-- Terminal prompt -->
+  <text x="42" y="50" fill="#A960EE" opacity="0.45" font-family="'Courier New', monospace" font-size="12">~/manushark  main &#x276F;</text>
+
+  <!-- Name with pulse -->
+  <text x="450" y="128" text-anchor="middle" fill="url(#textGrad)" font-family="'Courier New', monospace" font-size="52" font-weight="bold" filter="url(#glow)" letter-spacing="4">Manuel Rivas
+    <animate attributeName="opacity" values="0.88;1;0.88" dur="4s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- Role tag -->
+  <text x="450" y="168" text-anchor="middle" fill="#8b949e" font-family="'Courier New', monospace" font-size="16" letter-spacing="3">&lt; Software Developer /&gt;</text>
+
+  <!-- Description -->
+  <text x="450" y="206" text-anchor="middle" fill="#A960EE" font-family="'Courier New', monospace" font-size="13" opacity="0.75" letter-spacing="1">Clean Code · Scalable Architecture · Real-World Solutions</text>
+
+  <!-- Blinking cursor -->
+  <rect x="609" y="190" width="9" height="17" fill="#A960EE">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Open to Work badge -->
+  <rect x="342" y="226" width="216" height="28" rx="14" fill="#A960EE" fill-opacity="0.12" stroke="#A960EE" stroke-width="1" stroke-opacity="0.35"/>
+  <circle cx="364" cy="240" r="5" fill="#3fb950">
+    <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite"/>
+  </circle>
+  <text x="377" y="245" fill="#3fb950" font-family="'Courier New', monospace" font-size="13" font-weight="bold">Open to Work &#x2713;</text>
+
+  <!-- Bottom accent line -->
+  <line x1="40" y1="270" x2="860" y2="270" stroke="url(#lineGrad)" stroke-width="1" opacity="0.35"/>
+  <circle cx="40" cy="270" r="2.5" fill="#A960EE" opacity="0.4"/>
+  <circle cx="860" cy="270" r="2.5" fill="#FF333D" opacity="0.4"/>
+</svg>
