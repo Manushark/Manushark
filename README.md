@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- Banner SVG — upload banner.svg to the root of this repo -->
-<img src="./banner.svg" width="100%" alt="Manuel Rivas — Software Developer"/>
+<img src="./banner.svg" width="500%" alt="Manuel Rivas — Software Developer"/>
 
 <br/>
 
