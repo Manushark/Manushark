@@ -1,95 +1,413 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" width="900" height="280">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" width="100%">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0d1117"/>
-      <stop offset="100%" stop-color="#1a0533"/>
+    <!-- Sky gradient - stormy -->
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d12"/>
+      <stop offset="60%" stop-color="#0d1520"/>
+      <stop offset="100%" stop-color="#111c2e"/>
     </linearGradient>
-    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#A960EE" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#A960EE" stop-opacity="1"/>
-      <stop offset="100%" stop-color="#FF333D" stop-opacity="0"/>
+
+    <!-- Puddle/ground reflection gradient -->
+    <linearGradient id="ground" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0d1a2e"/>
+      <stop offset="100%" stop-color="#070d18"/>
     </linearGradient>
-    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#A960EE"/>
-      <stop offset="50%" stop-color="#ff6fd8"/>
-      <stop offset="100%" stop-color="#FF333D"/>
+
+    <!-- Name gradient - cool blue white -->
+    <linearGradient id="nameGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#93c5fd"/>
+      <stop offset="40%" stop-color="#f0f9ff"/>
+      <stop offset="60%" stop-color="#f0f9ff"/>
+      <stop offset="100%" stop-color="#7dd3fc"/>
     </linearGradient>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+
+    <!-- Puddle ripple gradient -->
+    <radialGradient id="ripple1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7dd3fc" stop-opacity="0.0"/>
+      <stop offset="70%" stop-color="#7dd3fc" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#7dd3fc" stop-opacity="0.0"/>
+    </radialGradient>
+    <radialGradient id="ripple2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#93c5fd" stop-opacity="0.0"/>
+      <stop offset="70%" stop-color="#93c5fd" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#93c5fd" stop-opacity="0.0"/>
+    </radialGradient>
+
+    <!-- Cloud gradient -->
+    <linearGradient id="cloud1g" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e2d42"/>
+      <stop offset="100%" stop-color="#141f30"/>
+    </linearGradient>
+
+    <!-- Lightning glow -->
+    <filter id="lightning">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <filter id="softglow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="12" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+
+    <filter id="textglow">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="cloudblur">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+
+    <filter id="bloom">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+
+    <clipPath id="clip">
+      <rect width="900" height="260"/>
+    </clipPath>
   </defs>
 
-  <!-- Background -->
-  <rect width="900" height="280" fill="url(#bg)"/>
+  <g clip-path="url(#clip)">
 
-  <!-- Grid lines -->
-  <g stroke="#A960EE" stroke-opacity="0.07" stroke-width="1">
-    <line x1="0" y1="56" x2="900" y2="56"/>
-    <line x1="0" y1="112" x2="900" y2="112"/>
-    <line x1="0" y1="168" x2="900" y2="168"/>
-    <line x1="0" y1="224" x2="900" y2="224"/>
-    <line x1="180" y1="0" x2="180" y2="280"/>
-    <line x1="360" y1="0" x2="360" y2="280"/>
-    <line x1="540" y1="0" x2="540" y2="280"/>
-    <line x1="720" y1="0" x2="720" y2="280"/>
+  <!-- Sky -->
+  <rect width="900" height="260" fill="url(#sky)"/>
+
+  <!-- Storm clouds layer 1 - back, dark -->
+  <ellipse cx="120" cy="-10" rx="160" ry="55" fill="#141e2e" opacity="0.95"/>
+  <ellipse cx="280" cy="-18" rx="140" ry="50" fill="#111829" opacity="0.9"/>
+  <ellipse cx="450" cy="-22" rx="180" ry="60" fill="#0e1624" opacity="0.95"/>
+  <ellipse cx="650" cy="-15" rx="160" ry="55" fill="#121a2a" opacity="0.9"/>
+  <ellipse cx="820" cy="-8" rx="130" ry="48" fill="#141e2e" opacity="0.95"/>
+
+  <!-- Storm clouds layer 2 - front, slightly lighter edges -->
+  <ellipse cx="80" cy="15" rx="110" ry="40" fill="#1a2638" opacity="0.85"/>
+  <ellipse cx="200" cy="8" rx="130" ry="45" fill="#1c2a3c" opacity="0.8"/>
+  <ellipse cx="360" cy="5" rx="150" ry="50" fill="#192436" opacity="0.85"/>
+  <ellipse cx="540" cy="10" rx="140" ry="48" fill="#1a2638" opacity="0.8"/>
+  <ellipse cx="700" cy="6" rx="130" ry="44" fill="#1c2a3c" opacity="0.85"/>
+  <ellipse cx="870" cy="12" rx="100" ry="38" fill="#192436" opacity="0.8"/>
+
+  <!-- Cloud undersides - slightly brighter for depth -->
+  <ellipse cx="200" cy="42" rx="120" ry="18" fill="#1e2d40" opacity="0.6" filter="url(#cloudblur)"/>
+  <ellipse cx="450" cy="45" rx="160" ry="20" fill="#1e2d40" opacity="0.6" filter="url(#cloudblur)"/>
+  <ellipse cx="700" cy="43" rx="130" ry="18" fill="#1e2d40" opacity="0.6" filter="url(#cloudblur)"/>
+
+  <!-- Ground / wet pavement -->
+  <rect x="0" y="210" width="900" height="50" fill="url(#ground)"/>
+  <!-- Wet sheen on ground -->
+  <rect x="0" y="210" width="900" height="2" fill="#7dd3fc" opacity="0.06"/>
+
+  <!-- Ground reflection of name (blurry, distorted) -->
+  <text x="450" y="248"
+    text-anchor="middle"
+    fill="#7dd3fc"
+    font-family="'Courier New', monospace"
+    font-size="30"
+    font-weight="bold"
+    letter-spacing="4"
+    opacity="0.08"
+    transform="scale(1,-0.35) translate(0,-740)"
+    filter="url(#bloom)">Manuel Rivas</text>
+
+  <!-- Puddle ripples -->
+  <!-- Ripple set A -->
+  <g transform="translate(200, 222)">
+    <ellipse rx="4" ry="2" fill="none" stroke="#7dd3fc" stroke-width="0.8" opacity="0">
+      <animate attributeName="rx" values="2;22" dur="2s" begin="0s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="1;8" dur="2s" begin="0s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0" dur="2s" begin="0s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse rx="4" ry="2" fill="none" stroke="#7dd3fc" stroke-width="0.5" opacity="0">
+      <animate attributeName="rx" values="2;18" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="1;6" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+  <!-- Ripple set B -->
+  <g transform="translate(450, 228)">
+    <ellipse rx="4" ry="2" fill="none" stroke="#93c5fd" stroke-width="0.8" opacity="0">
+      <animate attributeName="rx" values="2;26" dur="2.2s" begin="0.7s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="1;9" dur="2.2s" begin="0.7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.35;0" dur="2.2s" begin="0.7s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse rx="4" ry="2" fill="none" stroke="#93c5fd" stroke-width="0.5" opacity="0">
+      <animate attributeName="rx" values="2;20" dur="2.2s" begin="1.1s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="1;7" dur="2.2s" begin="1.1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.25;0" dur="2.2s" begin="1.1s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+  <!-- Ripple set C -->
+  <g transform="translate(680, 224)">
+    <ellipse rx="4" ry="2" fill="none" stroke="#7dd3fc" stroke-width="0.8" opacity="0">
+      <animate attributeName="rx" values="2;20" dur="1.9s" begin="1.4s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="1;7" dur="1.9s" begin="1.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0" dur="1.9s" begin="1.4s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+  <!-- Ripple set D -->
+  <g transform="translate(120, 234)">
+    <ellipse rx="4" ry="2" fill="none" stroke="#93c5fd" stroke-width="0.7" opacity="0">
+      <animate attributeName="rx" values="2;16" dur="1.7s" begin="0.3s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="1;5" dur="1.7s" begin="0.3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0" dur="1.7s" begin="0.3s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+  <!-- Ripple set E -->
+  <g transform="translate(780, 232)">
+    <ellipse rx="4" ry="2" fill="none" stroke="#7dd3fc" stroke-width="0.7" opacity="0">
+      <animate attributeName="rx" values="2;18" dur="2.1s" begin="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="1;6" dur="2.1s" begin="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0" dur="2.1s" begin="1.8s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+  <!-- Ripple set F small -->
+  <g transform="translate(340, 220)">
+    <ellipse rx="2" ry="1" fill="none" stroke="#bae6fd" stroke-width="0.6" opacity="0">
+      <animate attributeName="rx" values="1;12" dur="1.5s" begin="2s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="0.5;4" dur="1.5s" begin="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.25;0" dur="1.5s" begin="2s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+  <g transform="translate(600, 230)">
+    <ellipse rx="2" ry="1" fill="none" stroke="#bae6fd" stroke-width="0.6" opacity="0">
+      <animate attributeName="rx" values="1;14" dur="1.6s" begin="0.9s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="0.5;5" dur="1.6s" begin="0.9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.25;0" dur="1.6s" begin="0.9s" repeatCount="indefinite"/>
+    </ellipse>
   </g>
 
-  <!-- Animated scanline -->
-  <rect x="0" y="0" width="900" height="2" fill="url(#lineGrad)" opacity="0.8">
-    <animateTransform attributeName="transform" type="translate" from="0,0" to="0,280" dur="3s" repeatCount="indefinite"/>
+  <!-- RAIN DROPS - many columns, varied speed/opacity/length -->
+  <!-- Each drop: thin elongated line, slight angle -->
+
+  <!-- Dense rain - full width, angled slightly right -->
+  <!-- Column group 1: x 20-180 -->
+  <line x1="22" y1="0" x2="19" y2="18" stroke="#bae6fd" stroke-width="0.9" stroke-linecap="round" opacity="0.55">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.1s" repeatCount="indefinite"/>
+  </line>
+  <line x1="22" y1="0" x2="19" y2="18" stroke="#93c5fd" stroke-width="0.7" stroke-linecap="round" opacity="0.4">
+    <animateTransform attributeName="transform" type="translate" from="0,-130" to="3,260" dur="1.1s" begin="0.55s" repeatCount="indefinite"/>
+  </line>
+
+  <line x1="42" y1="0" x2="39" y2="22" stroke="#bae6fd" stroke-width="1" stroke-linecap="round" opacity="0.6">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="0.95s" begin="0.2s" repeatCount="indefinite"/>
+  </line>
+  <line x1="42" y1="0" x2="39" y2="22" stroke="#7dd3fc" stroke-width="0.8" stroke-linecap="round" opacity="0.35">
+    <animateTransform attributeName="transform" type="translate" from="0,-100" to="3,260" dur="0.95s" begin="0.7s" repeatCount="indefinite"/>
+  </line>
+
+  <line x1="65" y1="0" x2="62" y2="16" stroke="#bae6fd" stroke-width="0.8" stroke-linecap="round" opacity="0.5">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.2s" begin="0.4s" repeatCount="indefinite"/>
+  </line>
+
+  <line x1="85" y1="0" x2="82" y2="20" stroke="#93c5fd" stroke-width="0.9" stroke-linecap="round" opacity="0.55">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.0s" begin="0.1s" repeatCount="indefinite"/>
+  </line>
+  <line x1="85" y1="0" x2="82" y2="20" stroke="#bae6fd" stroke-width="0.7" stroke-linecap="round" opacity="0.3">
+    <animateTransform attributeName="transform" type="translate" from="0,-150" to="3,260" dur="1.0s" begin="0.6s" repeatCount="indefinite"/>
+  </line>
+
+  <line x1="108" y1="0" x2="105" y2="18" stroke="#7dd3fc" stroke-width="0.8" stroke-linecap="round" opacity="0.45">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.15s" begin="0.35s" repeatCount="indefinite"/>
+  </line>
+
+  <line x1="128" y1="0" x2="125" y2="24" stroke="#bae6fd" stroke-width="1.1" stroke-linecap="round" opacity="0.65">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="0.9s" begin="0.15s" repeatCount="indefinite"/>
+  </line>
+  <line x1="128" y1="0" x2="125" y2="24" stroke="#93c5fd" stroke-width="0.7" stroke-linecap="round" opacity="0.3">
+    <animateTransform attributeName="transform" type="translate" from="0,-90" to="3,260" dur="0.9s" begin="0.6s" repeatCount="indefinite"/>
+  </line>
+
+  <line x1="150" y1="0" x2="147" y2="19" stroke="#bae6fd" stroke-width="0.85" stroke-linecap="round" opacity="0.5">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.05s" begin="0.5s" repeatCount="indefinite"/>
+  </line>
+
+  <line x1="172" y1="0" x2="169" y2="21" stroke="#93c5fd" stroke-width="0.9" stroke-linecap="round" opacity="0.45">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.1s" begin="0.25s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- Column group 2: x 200-380 -->
+  <line x1="205" y1="0" x2="202" y2="20" stroke="#bae6fd" stroke-width="0.9" stroke-linecap="round" opacity="0.55">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.0s" begin="0.3s" repeatCount="indefinite"/>
+  </line>
+  <line x1="205" y1="0" x2="202" y2="20" stroke="#7dd3fc" stroke-width="0.6" stroke-linecap="round" opacity="0.3">
+    <animateTransform attributeName="transform" type="translate" from="0,-120" to="3,260" dur="1.0s" begin="0.8s" repeatCount="indefinite"/>
+  </line>
+
+  <line x1="228" y1="0" x2="225" y2="17" stroke="#93c5fd" stroke-width="0.8" stroke-linecap="round" opacity="0.5">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.18s" begin="0.08s" repeatCount="indefinite"/>
+  </line>
+
+  <line x1="250" y1="0" x2="247" y2="23" stroke="#bae6fd" stroke-width="1.0" stroke-linecap="round" opacity="0.6">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="0.92s" begin="0.45s" repeatCount="indefinite"/>
+  </line>
+  <line x1="250" y1="0" x2="247" y2="23" stroke="#bae6fd" stroke-width="0.7" stroke-linecap="round" opacity="0.28">
+    <animateTransform attributeName="transform" type="translate" from="0,-140" to="3,260" dur="0.92s" begin="0.9s" repeatCount="indefinite"/>
+  </line>
+
+  <line x1="272" y1="0" x2="269" y2="18" stroke="#7dd3fc" stroke-width="0.85" stroke-linecap="round" opacity="0.45">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.08s" begin="0.62s" repeatCount="indefinite"/>
+  </line>
+
+  <line x1="295" y1="0" x2="292" y2="21" stroke="#bae6fd" stroke-width="0.95" stroke-linecap="round" opacity="0.55">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.0s" begin="0.18s" repeatCount="indefinite"/>
+  </line>
+
+  <line x1="318" y1="0" x2="315" y2="16" stroke="#93c5fd" stroke-width="0.8" stroke-linecap="round" opacity="0.4">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.22s" begin="0.55s" repeatCount="indefinite"/>
+  </line>
+
+  <line x1="340" y1="0" x2="337" y2="22" stroke="#bae6fd" stroke-width="1.0" stroke-linecap="round" opacity="0.58">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="0.98s" begin="0.32s" repeatCount="indefinite"/>
+  </line>
+
+  <line x1="362" y1="0" x2="359" y2="19" stroke="#7dd3fc" stroke-width="0.9" stroke-linecap="round" opacity="0.48">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.12s" begin="0.72s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- Column group 3: x 400-560 (center - slightly lighter so text pops) -->
+  <line x1="405" y1="0" x2="402" y2="18" stroke="#bae6fd" stroke-width="0.7" stroke-linecap="round" opacity="0.25">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.05s" begin="0.15s" repeatCount="indefinite"/>
+  </line>
+  <line x1="428" y1="0" x2="425" y2="20" stroke="#93c5fd" stroke-width="0.65" stroke-linecap="round" opacity="0.22">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.1s" begin="0.48s" repeatCount="indefinite"/>
+  </line>
+  <line x1="452" y1="0" x2="449" y2="22" stroke="#bae6fd" stroke-width="0.7" stroke-linecap="round" opacity="0.28">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="0.97s" begin="0.82s" repeatCount="indefinite"/>
+  </line>
+  <line x1="475" y1="0" x2="472" y2="17" stroke="#7dd3fc" stroke-width="0.6" stroke-linecap="round" opacity="0.2">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.15s" begin="0.28s" repeatCount="indefinite"/>
+  </line>
+  <line x1="498" y1="0" x2="495" y2="21" stroke="#bae6fd" stroke-width="0.7" stroke-linecap="round" opacity="0.25">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.02s" begin="0.65s" repeatCount="indefinite"/>
+  </line>
+  <line x1="522" y1="0" x2="519" y2="19" stroke="#93c5fd" stroke-width="0.65" stroke-linecap="round" opacity="0.22">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.2s" begin="0.1s" repeatCount="indefinite"/>
+  </line>
+  <line x1="545" y1="0" x2="542" y2="20" stroke="#bae6fd" stroke-width="0.7" stroke-linecap="round" opacity="0.26">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.07s" begin="0.42s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- Column group 4: x 580-760 -->
+  <line x1="582" y1="0" x2="579" y2="21" stroke="#bae6fd" stroke-width="0.9" stroke-linecap="round" opacity="0.5">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.0s" begin="0.38s" repeatCount="indefinite"/>
+  </line>
+  <line x1="605" y1="0" x2="602" y2="18" stroke="#93c5fd" stroke-width="0.8" stroke-linecap="round" opacity="0.45">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.14s" begin="0.72s" repeatCount="indefinite"/>
+  </line>
+  <line x1="628" y1="0" x2="625" y2="23" stroke="#bae6fd" stroke-width="1.0" stroke-linecap="round" opacity="0.58">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="0.93s" begin="0.12s" repeatCount="indefinite"/>
+  </line>
+  <line x1="628" y1="0" x2="625" y2="23" stroke="#7dd3fc" stroke-width="0.6" stroke-linecap="round" opacity="0.25">
+    <animateTransform attributeName="transform" type="translate" from="0,-110" to="3,260" dur="0.93s" begin="0.55s" repeatCount="indefinite"/>
+  </line>
+  <line x1="650" y1="0" x2="647" y2="17" stroke="#bae6fd" stroke-width="0.85" stroke-linecap="round" opacity="0.48">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.08s" begin="0.48s" repeatCount="indefinite"/>
+  </line>
+  <line x1="672" y1="0" x2="669" y2="20" stroke="#93c5fd" stroke-width="0.9" stroke-linecap="round" opacity="0.52">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.0s" begin="0.22s" repeatCount="indefinite"/>
+  </line>
+  <line x1="695" y1="0" x2="692" y2="22" stroke="#bae6fd" stroke-width="0.95" stroke-linecap="round" opacity="0.55">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="0.97s" begin="0.6s" repeatCount="indefinite"/>
+  </line>
+  <line x1="718" y1="0" x2="715" y2="18" stroke="#7dd3fc" stroke-width="0.8" stroke-linecap="round" opacity="0.42">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.13s" begin="0.35s" repeatCount="indefinite"/>
+  </line>
+  <line x1="740" y1="0" x2="737" y2="21" stroke="#bae6fd" stroke-width="0.9" stroke-linecap="round" opacity="0.5">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.05s" begin="0.78s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- Column group 5: x 770-900 -->
+  <line x1="772" y1="0" x2="769" y2="19" stroke="#93c5fd" stroke-width="0.85" stroke-linecap="round" opacity="0.48">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.1s" begin="0.18s" repeatCount="indefinite"/>
+  </line>
+  <line x1="794" y1="0" x2="791" y2="23" stroke="#bae6fd" stroke-width="1.0" stroke-linecap="round" opacity="0.6">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="0.94s" begin="0.52s" repeatCount="indefinite"/>
+  </line>
+  <line x1="794" y1="0" x2="791" y2="23" stroke="#bae6fd" stroke-width="0.65" stroke-linecap="round" opacity="0.28">
+    <animateTransform attributeName="transform" type="translate" from="0,-130" to="3,260" dur="0.94s" begin="0.92s" repeatCount="indefinite"/>
+  </line>
+  <line x1="816" y1="0" x2="813" y2="17" stroke="#7dd3fc" stroke-width="0.8" stroke-linecap="round" opacity="0.44">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.18s" begin="0.68s" repeatCount="indefinite"/>
+  </line>
+  <line x1="838" y1="0" x2="835" y2="21" stroke="#bae6fd" stroke-width="0.9" stroke-linecap="round" opacity="0.52">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.02s" begin="0.25s" repeatCount="indefinite"/>
+  </line>
+  <line x1="860" y1="0" x2="857" y2="20" stroke="#93c5fd" stroke-width="0.85" stroke-linecap="round" opacity="0.48">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.08s" begin="0.58s" repeatCount="indefinite"/>
+  </line>
+  <line x1="882" y1="0" x2="879" y2="18" stroke="#bae6fd" stroke-width="0.95" stroke-linecap="round" opacity="0.5">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="3,260" dur="1.0s" begin="0.82s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- Extra fine drops between -->
+  <line x1="33" y1="0" x2="31" y2="14" stroke="#e0f2fe" stroke-width="0.6" stroke-linecap="round" opacity="0.35">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="2,260" dur="1.3s" begin="0.22s" repeatCount="indefinite"/>
+  </line>
+  <line x1="55" y1="0" x2="53" y2="16" stroke="#e0f2fe" stroke-width="0.55" stroke-linecap="round" opacity="0.3">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="2,260" dur="1.25s" begin="0.78s" repeatCount="indefinite"/>
+  </line>
+  <line x1="190" y1="0" x2="188" y2="15" stroke="#e0f2fe" stroke-width="0.6" stroke-linecap="round" opacity="0.32">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="2,260" dur="1.28s" begin="0.45s" repeatCount="indefinite"/>
+  </line>
+  <line x1="240" y1="0" x2="238" y2="13" stroke="#e0f2fe" stroke-width="0.55" stroke-linecap="round" opacity="0.28">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="2,260" dur="1.35s" begin="0.9s" repeatCount="indefinite"/>
+  </line>
+  <line x1="380" y1="0" x2="378" y2="16" stroke="#e0f2fe" stroke-width="0.6" stroke-linecap="round" opacity="0.3">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="2,260" dur="1.22s" begin="0.15s" repeatCount="indefinite"/>
+  </line>
+  <line x1="565" y1="0" x2="563" y2="14" stroke="#e0f2fe" stroke-width="0.55" stroke-linecap="round" opacity="0.28">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="2,260" dur="1.3s" begin="0.68s" repeatCount="indefinite"/>
+  </line>
+  <line x1="758" y1="0" x2="756" y2="17" stroke="#e0f2fe" stroke-width="0.6" stroke-linecap="round" opacity="0.32">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="2,260" dur="1.18s" begin="0.38s" repeatCount="indefinite"/>
+  </line>
+  <line x1="850" y1="0" x2="848" y2="15" stroke="#e0f2fe" stroke-width="0.55" stroke-linecap="round" opacity="0.3">
+    <animateTransform attributeName="transform" type="translate" from="0,-260" to="2,260" dur="1.25s" begin="1.0s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- Lightning flash - occasional -->
+  <rect width="900" height="260" fill="#e0f7ff" opacity="0">
+    <animate attributeName="opacity" values="0;0;0;0;0;0;0;0.04;0.08;0;0;0;0;0;0;0;0;0;0;0" dur="7s" repeatCount="indefinite"/>
   </rect>
 
-  <!-- Corner brackets -->
-  <g stroke="#A960EE" stroke-width="2.5" fill="none" filter="url(#glow)">
-    <polyline points="20,50 20,18 52,18"/>
-    <polyline points="848,18 880,18 880,50"/>
-    <polyline points="20,230 20,262 52,262"/>
-    <polyline points="848,262 880,262 880,230"/>
-  </g>
+  <!-- Name glow bloom -->
+  <ellipse cx="450" cy="118" rx="220" ry="50" fill="#93c5fd" opacity="0.05" filter="url(#bloom)"/>
 
-  <!-- Ambient orbs -->
-  <circle cx="140" cy="140" r="90" fill="#A960EE" opacity="0.06" filter="url(#softglow)"/>
-  <circle cx="760" cy="140" r="90" fill="#FF333D" opacity="0.05" filter="url(#softglow)"/>
-
-  <!-- Terminal prompt -->
-  <text x="42" y="50" fill="#A960EE" opacity="0.45" font-family="'Courier New', monospace" font-size="12">~/manushark  main &#x276F;</text>
-
-  <!-- Name with pulse -->
-  <text x="450" y="128" text-anchor="middle" fill="url(#textGrad)" font-family="'Courier New', monospace" font-size="52" font-weight="bold" filter="url(#glow)" letter-spacing="4">Manuel Rivas
-    <animate attributeName="opacity" values="0.88;1;0.88" dur="4s" repeatCount="indefinite"/>
+  <!-- Name -->
+  <text x="450" y="122"
+    text-anchor="middle"
+    fill="url(#nameGrad)"
+    font-family="'Courier New', monospace"
+    font-size="50"
+    font-weight="bold"
+    letter-spacing="4"
+    filter="url(#textglow)">
+    Manuel Rivas
+    <animate attributeName="opacity" values="0.92;1;0.92" dur="5s" repeatCount="indefinite"/>
   </text>
 
-  <!-- Role tag -->
-  <text x="450" y="168" text-anchor="middle" fill="#8b949e" font-family="'Courier New', monospace" font-size="16" letter-spacing="3">&lt; Software Developer /&gt;</text>
+  <!-- Role -->
+  <text x="450" y="153"
+    text-anchor="middle"
+    fill="#4b87a8"
+    font-family="'Courier New', monospace"
+    font-size="13"
+    letter-spacing="5">SOFTWARE  DEVELOPER</text>
 
-  <!-- Description -->
-  <text x="450" y="206" text-anchor="middle" fill="#A960EE" font-family="'Courier New', monospace" font-size="13" opacity="0.75" letter-spacing="1">Clean Code · Scalable Architecture · Real-World Solutions</text>
+  <!-- Divider -->
+  <line x1="355" y1="167" x2="545" y2="167" stroke="#7dd3fc" stroke-width="0.5" stroke-opacity="0.2"/>
 
-  <!-- Blinking cursor -->
-  <rect x="609" y="190" width="9" height="17" fill="#A960EE">
-    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
-  </rect>
-
-  <!-- Open to Work badge -->
-  <rect x="342" y="226" width="216" height="28" rx="14" fill="#A960EE" fill-opacity="0.12" stroke="#A960EE" stroke-width="1" stroke-opacity="0.35"/>
-  <circle cx="364" cy="240" r="5" fill="#3fb950">
-    <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite"/>
+  <!-- Open to work -->
+  <circle cx="410" cy="182" r="3.5" fill="#34d399" filter="url(#softglow)">
+    <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/>
   </circle>
-  <text x="377" y="245" fill="#3fb950" font-family="'Courier New', monospace" font-size="13" font-weight="bold">Open to Work &#x2713;</text>
+  <text x="450" y="187"
+    text-anchor="middle"
+    fill="#4b87a8"
+    font-family="'Courier New', monospace"
+    font-size="12"
+    letter-spacing="2">open to work</text>
 
-  <!-- Bottom accent line -->
-  <line x1="40" y1="270" x2="860" y2="270" stroke="url(#lineGrad)" stroke-width="1" opacity="0.35"/>
-  <circle cx="40" cy="270" r="2.5" fill="#A960EE" opacity="0.4"/>
-  <circle cx="860" cy="270" r="2.5" fill="#FF333D" opacity="0.4"/>
+  </g>
 </svg>
