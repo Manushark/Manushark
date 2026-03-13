@@ -18,26 +18,16 @@
 
 ---
 
-## 🚀 About Me
+                                                            - 🥸 About Me -
+<div align="center">
+<img src="./Card1.svg" width="42%" alt="Passionate Builder"/>
+<img src="./Card2.svg" width="42%" alt="Daily Grower"/>
+<img src="./Card3.svg" width="42%" alt="Team Player"/>
+<img src="./Card4.svg" width="42%" alt="Open to Work"/>
+<br/><br/>
+<img src="./Strip.svg" width="85%" alt="Quick Facts"/>
+</div>
 
-```yaml
-name:     Manuel Rivas
-role:     Software Developer
-status:   Open to Work ✅
-
-passions:
-  - ✨  Crafting clean, maintainable code
-  - 🏗️  Building scalable architectures
-  - 🌍  Creating real-world solutions
-  - 📈  Pushing commits daily — personal growth routine
-
-values:
-  - 🤝  Collaboration & Innovation
-  - 🔄  Continuous Learning
-  - 🎯  Quality Over Quantity
-```
-
----
 
 ## 🛠️ Tech Stack
 
