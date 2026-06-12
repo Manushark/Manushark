@@ -18,7 +18,7 @@
 
 ---
 
-                                                            - 🥸 About Me -
+                                                            - About Me -
 <div align="center">
 <img src="./Card1.svg" width="42%" alt="Passionate Builder"/>
 <img src="./Card2.svg" width="42%" alt="Daily Grower"/>
