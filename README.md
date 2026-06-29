@@ -68,7 +68,7 @@
 <div align="center">
 
 <img width="47.7%" src="https://manushark-readme-stats.vercel.app/api?username=Manushark&theme=midnight-purple&hide_border=true&include_all_commits=true&count_private=true&show_icons=true"/>
-<img width="51%" src="https://streak-stats.demolab.com?user=Manushark&theme=midnight-purple&hide_border=true"/>
+<img width="51%" src="https://streak-stats.demolab.com?user=Manushark&theme=midnight-purple&hide_border=true&cache_seconds=0"/>
 <img width="37%" src="https://manushark-readme-stats.vercel.app/api/top-langs/?username=Manushark&theme=midnight-purple&hide_border=true&layout=compact"/>
 
 
