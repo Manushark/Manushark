@@ -60,16 +60,16 @@
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
 ![Azure DevOps](https://img.shields.io/badge/Azure%20DevOps-0078D7?style=for-the-badge&logo=azuredevops&logoColor=white)
 </div>
+
 ---
 
 ## 📊 GitHub Stats
 
 <div align="center">
 
-<img width="47.7%" src="https://manushark-readme-stats.vercel.app/api?username=Manushark&theme=midnight-purple&hide_border=true&include_all_commits=true&count_private=true&show_icons=true" />
-<img width="51%" src="https://streak-stats.demolab.com?user=Manushark&theme=midnight-purple&hide_border=true" />
-
-<img width="37%" src="https://manushark-readme-stats.vercel.app/api/top-langs/?username=Manushark&theme=midnight-purple&hide_border=true&layout=compact" />
+<img width="47.7%" src="https://manushark-readme-stats.vercel.app/api?username=Manushark&theme=midnight-purple&hide_border=true&include_all_commits=true&count_private=true&show_icons=true"/>
+<img width="51%" src="https://streak-stats.demolab.com?user=Manushark&theme=midnight-purple&hide_border=true"/>
+<img width="37%" src="https://manushark-readme-stats.vercel.app/api/top-langs/?username=Manushark&theme=midnight-purple&hide_border=true&layout=compact"/>
 
 
 </div>
